@@ -1,15 +1,18 @@
 
-# v0.2 // NOT FINISHED YET 
+# v0.3 // NOT FINISHED YET 
 #V V V V |UPDATE NOTES| V V V V V V 
-#-Added some moons on the info category (continued this)
-#-fixed an issue where moons() came first instead of menu()
-#-done the route()
+#! ! ! The STORE function is NOT WORKING! ! ! ! (yet i will fix it in the next updates)
+#-Added some moons on the info category (DONE)
+#-fixed an issue where moons() came first instead of menu() [DONE]
+#-done the route() [DONE]
+#Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
-
+import math 
 print("Welcome To The Company!")
 
-credits = input("Enter your credits: ")
 
+credits = int(input("Enter your credits: "))
+walk = 12 
 
 
 
@@ -24,9 +27,10 @@ def main():
 
 
 
-def menu():
-    print("                    '" + credits + " ")
+def menu(credits):
+    print("                    '",credits," ")
     choice = input("""
+                      
                       >MOONS
                       To see the list of moons the autopilot can route to.
                       
@@ -46,7 +50,72 @@ def menu():
     if choice == "MOONS" or choice =="moo" or choice == "moons" or choice == "m": 
         moons()
     elif choice == "STORE" or choice =="store" :
-        store()
+        def store(credits,walk):
+             
+            print("                    '", credits ," ")
+            Schoice = input("""
+                      
+                      Welcome to the Company store. 
+                      Use words BUY and INFO on any item.
+                      Order tools in bulk by typing a number.
+                      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+                      * Walkie-talkie  //  Price: '12
+                      * Flashlight  //  Price: '15
+                      * Shovel  //  Price: '30 
+                      * Lockpicker  //  Price: '20
+                      * Pro-flashlight  //  Price: '25
+                      * Stun grenade  //  Price: '30
+                      * Boombox  //  Price: '60
+                      * TZP-Inhalant  //  Price: '120 
+                      * Zap gun  //  Price: '400 
+                      * Jetpack  //  Price: '700
+                      * Extension ladder  //  Price: '60
+                      * Radar-booster  //  Price: '60
+                      * Spray paint  //  Price: '50
+                      * Belt bag  //  Price: '45 
+                       
+                      SHIP UPGRADES
+                      * Loud horn  //  Price: '100
+                      * Signal Translator  //  Price: '250
+                      * Teleporter  //  Price: '375
+                      * Inverse Teleporter  //  Price: '425
+
+                      The selection of the ship decor rotates per-quota. Be 
+                      sure to check back next week:
+                      ----------------------------------------
+
+                      [UNDER DEVELOPMENT]
+
+                        
+
+
+
+                      Remember first type the ACTION you want and THEN which ITEM: 
+                                                                                           """)
+                # NOT working , i will check it on next update what to do                                                            
+            if Schoice == "buy walk" or Schoice == "buy walkie talkie" or Schoice == "buy walkie-talkie":
+              AmChoice = int(input("What is the Amount of the walki-talkies?:  "))
+              if AmChoice == 1:
+               result = credits - walk
+               credits = int(result)
+               print(credits)
+              elif AmChoice < 1:
+              
+                result = credits - int((walk * AmChoice))
+                credits = int(result)
+                print(credits)
+              
+             
+            elif Schoice == "buy flashlight":
+                print("g")
+               
+                
+               
+            
+        
+        
+        store(credits,walk)
     elif choice == "BESTIARY" or choice =="best" or choice == "B" or choice == "b": 
         bestiary()
     elif choice == "STORAGE" or choice =="storage" : 
@@ -60,8 +129,8 @@ def menu():
     
 
 
-def moons():
-    print("                   '" + credits + " ")
+def moons(credits):
+    print("                   '" ,credits , " ")
     mchoice = input("""
                       Welcome to the exomoons catalogue. 
                       To route the autopilot to a moon , use the word ROUTE.
@@ -453,18 +522,18 @@ def moons():
     else: 
         print("You must only select one of the ACTION words first and then the MOON")
         print("Please Try Again")
-        moons()
+        moons(credits)
     
 
 
-menu()
+menu(credits)
 
 
 
 
 
-def store():
-    print("test")  
+
+      
 
 def bestiary():
     print("lolll")
