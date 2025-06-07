@@ -1,15 +1,26 @@
 
-# v0.3 // NOT FINISHED YET 
+# v0.4 // NOT FINISHED YET 
 #V V V V |UPDATE NOTES| V V V V V V 
 #! ! ! The STORE function is NOT WORKING! ! ! ! (yet i will fix it in the next updates)
+#-fixed info() so it's easier now to understand
+#-Added daytime and fixed the welcoming message
 #-Added some moons on the info category (DONE)
-#-fixed an issue where moons() came first instead of menu() [DONE]
-#-done the route() [DONE]
 #Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
 import math 
-print("Welcome To The Company!")
+import datetime 
 
+
+
+
+x = datetime.datetime.now()
+
+print("""
+         
+         Welcome to the FORTUNE-9 OS
+                   Courtesy of the Company   
+                       """)
+print(x.strftime(" Happy %A"))
 
 credits = int(input("Enter your credits: "))
 walk = 12 
@@ -48,7 +59,7 @@ def menu(credits):
 
                       Please enter your choice: """)
     if choice == "MOONS" or choice =="moo" or choice == "moons" or choice == "m": 
-        moons()
+        moons(credits)
     elif choice == "STORE" or choice =="store" :
         def store(credits,walk):
              
@@ -137,7 +148,7 @@ def moons(credits):
                       To learn about any moon, use the word INFO.
                       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-                      * The Company building // Buying at 100%
+                      * The Company Building // Buying at 100%
                       
                       * Experimentation 
                       * Assurance 
@@ -152,33 +163,13 @@ def moons(credits):
                       * Titan 
                        
 
-                      First type the ACTION you want and THEN which moon: 
+                       
                                                                                            """)
                #start of info       
-    if mchoice == "info" or mchoice =="INFO": 
+    if "INFO" in mchoice or "info" in mchoice: 
         def info():
-            choici = input("""
-                      Welcome to the exomoons catalogue. 
-                      Give the name of the MOON for more INFORMATION
-                      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-                      * The Company Building 
-                      
-                      * Experimentation 
-                      * Assurance 
-                      * Vow 
-                      
-                      * Offense 
-                      * March 
-                      * Adamance 
-                   
-                      * Rend 
-                      * Dine 
-                      * Titan 
-                       
-                      NAME of the MOON: 
-                                                                                        """) 
-            if choici == "The Company Building" or choici == "comp" or choici == "com" or choici == "c":
+             
+            if "The Company Building" in mchoice or "Company" in mchoice or "comp" in mchoice or "Company" in mchoice:
                 print("""
                       71-Gordion
                       
@@ -194,7 +185,7 @@ def moons(credits):
 
                       Status: UNKNOWN                                                   """)
                 
-            elif choici == "Experimentation" or choici == "expe" or choici == "exp" or choici == "Expe" or choici == "Exp" :
+            elif  "Experimentation" in mchoice or  "expe" in mchoice or  "exp" in mchoice or  "Expe" in mchoice or  "Exp" in mchoice:
                 print("""
                       41-Experimentation
                       
@@ -211,7 +202,7 @@ def moons(credits):
                       to have been used in secret.                                               
                                                                                         """)
                      
-            elif choici == "Ass" or choici == "ass" or choici == "Assurance" or choici == "assurance" or choici == "assura":
+            elif "Ass" in mchoice or  "ass" in mchoice or  "Assurance" in mchoice or  "assurance" in mchoice or  "assura" in mchoice:
                 print("""
                       220-Assurance
                       
@@ -230,7 +221,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)
-            elif choici == "vow" or choici == "VOW" or choici == "v":
+            elif  "vow" in mchoice or  "VOW" in mchoice or  "v" in mchoice:
                 print("""
                       56-Vow
                       
@@ -250,7 +241,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)
-            elif choici == "offense" or choici == "Off" or choici == "off" or choici == "Offense" or choici == "OFFENSE":
+            elif  "offense" in mchoice or  "Off" in mchoice or  "off" in mchoice or  "Offense" in mchoice or  "OFFENSE" in mchoice:
                 print ("""
                       21-Offense
                       
@@ -272,7 +263,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)      
-            elif choici == "March" or choici == "march" or choici == "Mar" or choici == "mar":  
+            elif  "March" in mchoice or  "march"  in mchoice or  "Mar" in mchoice  or  "mar" in mchoice:  
                 print("""
                       61-March
                       
@@ -290,7 +281,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)
-            elif choici == "Adamance" or choici == "Ada" or choici == "ada" or choici == "adamance":
+            elif  "Adamance" or  "Ada" in mchoice or  "ada" in mchoice or  "adamance" in mchoice:
                 print("""
                       20-Adamance 
                       
@@ -310,7 +301,7 @@ def moons(credits):
                       
                                                        
                                                                                         """) 
-            elif choici == "rend" or choici == "Rend" or choici == "R" or choici == "re":
+            elif  "rend" in mchoice or  "Rend"  in mchoice:
                 print("""
                       85-Rend 
                       
@@ -331,7 +322,7 @@ def moons(credits):
                       
                                                        
                                                                                         """) 
-            elif choici == "dine" or choici == "Dine" or choici == "di" or choici == "d":
+            elif  "dine" in mchoice or  "Dine" in mchoice or "DINE" in mchoice:
                 print("""
                       7-Dine 
                       
@@ -352,7 +343,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)
-            elif choici ==  "titan" or choici == "Titan" or choici == "T" or choici == "t" or choici == "tit":
+            elif  "titan" in mchoice or  "Titan" in mchoice or  "TITAN" in mchoice:
                 print("""
                       8-Titan
                       
@@ -374,7 +365,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)
-            elif choici == "art" or choici == "Art" or choici == "Artifice" or choici == "artifice":
+            elif  "art" in mchoice or  "Art" in mchoice or  "Artifice" in mchoice or  "artifice" in mchoice or "ARTIFICE" in mchoice:
                 print("""
                       68-Artifice
                       
@@ -393,7 +384,7 @@ def moons(credits):
                       
                                                        
                                                                                         """)
-            elif choici == "embrion" or choici == "Embrion" :
+            elif  "embrion" in mchoice or  "Embrion" in mchoice :
                 print("""
                       5-Embrion
                       
@@ -420,7 +411,7 @@ def moons(credits):
                       
                                                        
                                                                                         """) 
-            elif choici == "Liquidation" or choici == "liquidation" or choici == "L":
+            elif "Liquidation" in mchoice or  "liquidation" in mchoice:
                 print("""
                       44-Liquidation
                       
