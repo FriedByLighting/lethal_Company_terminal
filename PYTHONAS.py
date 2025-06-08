@@ -5,6 +5,7 @@
 #-fixed info() so it's easier now to understand
 #-Added daytime and fixed the welcoming message
 #-Added some moons on the info category (DONE)
+#working on the store 
 #Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
 import math 
