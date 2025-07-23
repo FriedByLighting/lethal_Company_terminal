@@ -1,8 +1,7 @@
-# v0.6 // NOT FINISHED YET 
+# v0.6.1 // NOT FINISHED YET 
 #V V V V |UPDATE NOTES| V V V V V V 
-#! ! ! The STORE function is NOT WORKING! ! ! ! (yet i will fix it in the next updates)
-##-Added the SIGURD() function
-#-Added bestiary() function and finished it 
+#! ! ! The STORE function is NOT WORKING (partially)! ! ! !
+#-Added an experimental feature to reset credits daily
 #fixed the moons() function so it now works with shortcuts and partial matches
 #Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
@@ -12,28 +11,32 @@ import datetime
 import re
 
 
+
 x = datetime.datetime.now()
 
 print("""
          
          Welcome to the FORTUNE-9 OS
                    Courtesy of the Company   
-                       """)
+                                                                                      """)
 print(x.strftime(" Happy %A"))
 
-credits = int(input("Enter your credits: "))
-walk = 12 
-
-
-
-
-
-
-
 def main():
-    menu(credits)
-# Item prices 
-def store(credits, walk):
+    credits = 60
+    last_day = datetime.datetime.now().day
+    while True:
+        now = datetime.datetime.now()
+        current_day = now.day
+        
+        if current_day != last_day:
+            credits = 60
+            print("\nA new day has started! Credits have been reset to 60 (experimental feature).\n")
+            last_day = current_day
+        credits = menu(credits)
+
+#-----Item Prices----- 
+
+def store(credits):
     menu_items = {
         "Walkie-talkie": 12,
         "Flashlight": 15,
@@ -161,6 +164,7 @@ def store(credits, walk):
             quantity = int(match.group(1)) if match.group(1) else 1
             item = match.group(2).strip()
             resolved_item = resolve_item(item)
+            
             if resolved_item and resolved_item in menu_items:
                 total = quantity * menu_items[resolved_item]
                 if credits >= total:
@@ -169,7 +173,7 @@ def store(credits, walk):
                     print(f"Credits left: {credits}")
                 else:
                     print("Not enough credits!")
-                credits = 60  # Reset credits to 60 after purchase {will change later}
+                
             else:
                 print("Item not found in the menu.")
         else:
@@ -193,8 +197,13 @@ def store(credits, walk):
         print("[This action was not compatible with this object.]")
 
     
-    menu(credits)
+    return credits
+
+
 #    -------------------------------====MENU===-----------------------------------------------
+
+
+
 def menu(credits):
     print("                                   ")
     print("                    '", credits, " ")
@@ -217,25 +226,27 @@ def menu(credits):
 
                       Please enter your choice: 
                                                                                      """)
-    if choice == "MOONS" or choice == "moo" or choice == "moons" or choice == "m":
-        moons(credits)
-    elif choice == "STORE" or choice == "store":
-        store(credits, walk)
-    elif choice == "BESTIARY" or choice == "bestiary" or choice == "B" or choice == "b":
-        bestiary()
-    elif choice == "STORAGE" or choice == "storage":
-        storage()
-    elif choice == "OTHER" or choice == "ot" or choice == "O" or choice == "o":
+    if choice.lower() in ["moons", "moo", "m"]:
+        credits = moons(credits)
+        return credits
+    elif choice.lower() in ["store"]:
+        credits = store(credits)
+        return credits
+    elif choice.lower() in ["bestiary", "b"]:
+        credits = bestiary(credits)
+        return credits
+    elif choice.lower() in ["storage"]:
+        credits = storage(credits)
+        return credits
+    elif choice.lower() in ["other", "ot", "o"]:
         other()
-    elif choice == "SIGURD" or choice == "sigurd":
+        return credits
+    elif choice.lower() in ["sigurd"]:
         sigurd()
-    
-    
-    
+        return credits
     else:
-        print("You must only select one of the capitalized words")
-        print("Please Try Again :) ")
-        menu(credits)
+        print("[This action was not compatible with this object.]")
+        return credits
 
 def moons(credits):
     print("                                   ")
@@ -524,7 +535,7 @@ def moons(credits):
     elif command == "ROUTE":
         print(f"The autopilot is ROUTED to {moon.title()}.")
 
-    menu(credits)
+    return credits
     
 def bestiary():
      print("                                   ")
@@ -1143,7 +1154,7 @@ def bestiary():
          print_bestiary_info(creature)
      else:
           print("[This action was not compatible with this object.]")
-
+     return credits
 
 
 
@@ -1176,7 +1187,4 @@ def sigurd():
 
 if __name__ == "__main__":
     main()
-
-
-
 
