@@ -1,6 +1,6 @@
 
 #v0.6.2 // NOT FINISHED YET
-# This is the function.py it contains functions related to the moons , bestiary, and other
+# This is the function.py it contains functions related to the moons , bestiary, and other info messages
 
 
 
