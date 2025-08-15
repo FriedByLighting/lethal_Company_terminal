@@ -35,7 +35,7 @@ def main():
             last_day = current_day
         credits = menu(credits)
 
-#-----Item Prices----- 
+#-----------[  Item Prices ]---------- 
 
 def store(credits):
     menu_items = {
@@ -61,7 +61,7 @@ def store(credits):
         "Cruiser": 370  
     }
 
-    # Custom info messages for items
+    
     info_messages = {
         "Flashlight": "The most affordable light source. it's even waterprof!",
         "Walkie-talkie": "Useful for keeping in touch! Hear other players when the walkie talkie is in your inventory. Must be in your hand and pressed down to transmit voice.",
@@ -86,7 +86,7 @@ def store(credits):
 
         
     }
-    #Shortcuts
+    
     shortcuts = {
         "walk": "Walkie-talkie",
         "flash": "Flashlight",
@@ -151,7 +151,7 @@ def store(credits):
 
     def resolve_item(item):
         item_lower = item.lower()
-        # Trying for shortcut match
+        
         for shortcut, full_name in shortcuts.items():
             if item_lower.startswith(shortcut):
                 return full_name
@@ -453,36 +453,5 @@ def bestiary(credits):
           print("[This action was not compatible with this object.]")
      return credits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def storage(): 
-    print("WALLET")
-
-def other():
-    print("klll")
-
-def sigurd():
-    print("SIGURD")
-
-if __name__ == "__main__":
-    main()
 
 
