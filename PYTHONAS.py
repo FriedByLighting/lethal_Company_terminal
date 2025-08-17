@@ -1,7 +1,8 @@
-# v0.6.2 // NOT FINISHED YET 
+# v0.6.3 // NOT FINISHED YET 
 #V V V V |UPDATE NOTES| V V V V V V 
 #! ! ! The STORE function is NOT WORKING (partially)! ! ! !
 #-Added an experimental feature to reset credits daily
+#-Added a new welcome message
 #-Added a second python file for the bestiary and moon info functions to save up space on this file
 #Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
@@ -15,6 +16,60 @@ import re
 
 x = datetime.datetime.now()
 
+
+
+
+
+print("""
+      
+BG IG, A System-Act Ally
+Copyright (C) 2084-2108, Halden Electronics inc.
+Courtesy of the Company.  
+      
+Bios for the FORTUNE-9 87.7/10MHZ SYSTEM               
+                                                              """)
+print(x.strftime("Current date is %A    %d-%m-2532"))
+print(x.strftime("Current time is %H:%M:%S"))
+
+input("Please enter favourite animal: ")
+print("                                         ")
+input("Please describe your role in a team dynamic:")
+print("""                                         
+
+
+
+
+
+
+                                                        
+                        
+                         
+                             
+                   
+ """)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print(""" 
+    
+
+__        _______ _     ____ ___  __  __ _____ 
+\ \      / | ____| |   / ___/ _ \|  \/  | ____|
+ \ \ /\ / /|  _| | |  | |  | | | | |\/| |  _|  
+  \ V  V / | |___| |__| |__| |_| | |  | | |___ 
+   \_/\_/  |_____|_____\____\___/|_|  |_|_____|
+                                                      """)
 print("""
          
          Welcome to the FORTUNE-9 OS
@@ -22,13 +77,39 @@ print("""
                                                                                       """)
 print(x.strftime(" Happy %A"))
 
+user_cmd = input("Type \"Help\" for a list of commands: ").strip().lower()
+
+def handle_first_command(cmd, credits):
+    if cmd == "help":
+        credits = menu(credits)
+    elif cmd in ["moons", "moo", "m"]:
+        credits = moons(credits)
+    elif cmd in ["store"]:
+        credits = store(credits)
+    elif cmd in ["bestiary", "b"]:
+        credits = bestiary(credits)
+    elif cmd in ["storage"]:
+        credits = storage(credits)
+    elif cmd in ["other", "ot", "o"]:
+        other()
+    elif cmd in ["sigurd"]:
+        sigurd()
+    else:
+        print("[This action was not compatible with this object.]")
+    return credits
+
 def main():
     credits = 60
     last_day = datetime.datetime.now().day
+
+    # Handle the first command before entering the main loop
+    global user_cmd
+    credits = handle_first_command(user_cmd, credits)
+
     while True:
         now = datetime.datetime.now()
         current_day = now.day
-        
+
         if current_day != last_day:
             credits = 60
             print("\nA new day has started! Credits have been reset to 60 (experimental feature).\n")
@@ -454,4 +535,17 @@ def bestiary(credits):
      return credits
 
 
+def storage(credits):
+    print('placeholder for storage function')
+    
 
+def other():
+    print("this is the other command menu")
+
+def sigurd():
+    print("Sigurd is not available yet, please wait for the next update.")
+    print("This is a placeholder function for future updates.")
+    print("Thank you for your patience!")
+
+if __name__ == "__main__":
+    main()
