@@ -1,9 +1,8 @@
-# v0.6.3 // NOT FINISHED YET 
+# v0.6.4 // NOT FINISHED YET 
 #V V V V |UPDATE NOTES| V V V V V V 
 #! ! ! The STORE function is NOT WORKING (partially)! ! ! !
-#-Added an experimental feature to reset credits daily
-#-Added a new welcome message
-#-Added a second python file for the bestiary and moon info functions to save up space on this file
+#-Added other and storage functions
+#-Added sigurd function (not working yet)
 #Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
 import math 
@@ -11,6 +10,7 @@ import datetime
 from function import the_moon_info
 from function import the_bestiary_info
 import re
+import random
 
 
 
@@ -76,9 +76,14 @@ print("""
                    Courtesy of the Company   
                                                                                       """)
 print(x.strftime(" Happy %A"))
-
+print('            ')
 user_cmd = input("Type \"Help\" for a list of commands: ").strip().lower()
+print("""
 
+
+
+
+                                                                 """)
 def handle_first_command(cmd, credits):
     if cmd == "help":
         credits = menu(credits)
@@ -91,7 +96,7 @@ def handle_first_command(cmd, credits):
     elif cmd in ["storage"]:
         credits = storage(credits)
     elif cmd in ["other", "ot", "o"]:
-        other()
+        credits = other(credits)
     elif cmd in ["sigurd"]:
         sigurd()
     else:
@@ -102,14 +107,14 @@ def main():
     credits = 60
     last_day = datetime.datetime.now().day
 
-    # Handle the first command before entering the main loop
+    
     global user_cmd
     credits = handle_first_command(user_cmd, credits)
 
     while True:
         now = datetime.datetime.now()
         current_day = now.day
-
+# probably will delete this later, really useless 
         if current_day != last_day:
             credits = 60
             print("\nA new day has started! Credits have been reset to 60 (experimental feature).\n")
@@ -321,7 +326,7 @@ def menu(credits):
         credits = storage(credits)
         return credits
     elif choice.lower() in ["other", "ot", "o"]:
-        other()
+        credits = other(credits)
         return credits
     elif choice.lower() in ["sigurd"]:
         sigurd()
@@ -374,14 +379,14 @@ def moons(credits):
         "liquidation": ["liquidation"]
     }
 
-    # Helper to resolve moon name from input
+   
     def resolve_moon(user_input):
         user_input = user_input.lower()
         for moon, aliases in moon_aliases.items():
             for alias in aliases:
                 if alias == user_input:
                     return moon
-        # Trying for partial match
+        
         for moon, aliases in moon_aliases.items():
             for alias in aliases:
                 if user_input in alias:
@@ -513,7 +518,7 @@ def bestiary(credits):
       
       
       
-       # checking command and bestiary
+      
      import re
      match = re.match(r'\s*(INFO|ROUTE)\s+(.+)', bchoice, re.IGNORECASE)
      if not match:
@@ -535,12 +540,170 @@ def bestiary(credits):
      return credits
 
 
-def storage(credits):
-    print('placeholder for storage function')
+def other(credits):
+    global monitor_on
+    print("                                   ")
+    print("                    '", credits, " ")
+    ochoice = input("""
+
+                      Other commands:
+                     
+                      >VIEW MONITOR
+                      To toggle on AND off the main monitor's map cam
+                      
+                      >SWITCH [Player name]
+                      To switch view to a player on the main monitor.
+            
+                      >PING [Radar booster name] 
+                      To make a radar booster play a noise.
+                   
+                      >SCAN 
+                      To scan for the number of items left on the current planet.
+                   
+
+                                                                                     """).strip()
+
+    
+    if ochoice.lower() == "view monitor":
+        monitor_on = not monitor_on
+        if monitor_on:
+            print("The monitor is on.")
+        else:
+            print("The monitor is off.")
+        return credits
+
+    
+    match_switch = re.match(r'^switch\s+(.+)', ochoice, re.IGNORECASE)
+    if match_switch:
+        player_name = match_switch.group(1).strip()
+        print(f"Now you are viewing '{player_name}'.")
+        return credits
+
+    
+    match_ping = re.match(r'^ping\s+(.+)', ochoice, re.IGNORECASE)
+    if match_ping:
+        print("Pinged radar booster.")
+        return credits
+
+
+    if ochoice.lower() == "scan":
+        objects = random.randint(10, 71)
+        value = random.randint(257, 1380)
+        print(f"There are {objects} objects outside the ship, totalling at an approximate value of {value}.")
+        return credits
+
+    print("""
+                   
+                     [This action was not compatible with this object.]
+                                                                             
+                                                                                       """)
+    return credits
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
-def other():
-    print("this is the other command menu")
+def storage():
+    print("                                   ")
+    print("                   '" ,credits , " ")
+    storage_choice = input(""" 
+                      While moving furniture with [B], you can press [X]
+                      to send it to storage. You can call it back from storage here.     
+
+                      These are the items in storage:
+
+                       Classic painting
+                       Cozy lights
+                       Disco ball
+                       Dog house 
+                       Electric chair
+                       Fridge
+                       Goldfish
+                       Inverse Teleporter
+                       Jack-o-lantern
+                       Microwave
+                       Plushie Pajama Man
+                       Record player
+                       Shower
+                       Sofa Chair
+                       Table
+                       Teleporter
+                       Televisiom
+                       Toilet
+                       Welcome mat
+                                                                                                 """)
+    storage_aliases = {
+        "Classic painting": ["Classic painting", "classic painting"],
+        "Cozy lights": ["Cozy lights", "cozy lights"],
+        "Disco ball": ["Disco ball", "disco ball"],
+        "Dog house": ["Dog house", "dog house"],
+        "Electric chair": ["Electric chair", "electric chair"],
+        "Fridge": ["Fridge", "fridge"],
+        "Goldfish": ["Goldfish", "goldfish"],
+        "Inverse Teleporter": ["Inverse Teleporter", "inverse teleporter"],
+        "Jack-o-lantern": ["Jack-o-lantern", "jack-o-lantern"],
+        "Microwave": ["Microwave", "microwave"],
+        "Plushie Pajama Man": ["Plushie Pajama Man", "plushie pajama man"],
+        "Record player": ["Record player", "record player"],
+        "Shower": ["Shower", "shower"],
+        "Sofa Chair": ["Sofa Chair", "sofa chair"],
+        "Table": ["Table", "table"],
+        "Teleporter": ["Teleporter", "teleporter"],
+        "Television": ["Television", "television"],
+        "Toilet": ["Toilet", "toilet"],
+        "Welcome mat": ["Welcome mat", "welcome mat"]
+    }
+
+    def resolve_storage(user_input):
+        user_input = user_input.lower()
+        for item, aliases in storage_aliases.items():
+            for alias in aliases:
+                if alias == user_input:
+                    return item
+        for item, aliases in storage_aliases.items():
+            for alias in aliases:
+                if user_input in alias:
+                    return item
+        return None
+
+    item = resolve_storage(storage_choice.strip())
+    if item:
+        print("Returned the item from storage!")
+    else:
+        print("[This action was not compatible with this object.]")
+    
 
 def sigurd():
     print("Sigurd is not available yet, please wait for the next update.")
