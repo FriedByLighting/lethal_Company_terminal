@@ -1,5 +1,5 @@
 
-#v0.6.4 // NOT FINISHED YET
+#v1.6.5 // NOT FINISHED YET
 # This is the function.py it contains functions related to the moons , bestiary, and other info messages
 
 
@@ -824,7 +824,357 @@ def the_bestiary_info(creature):
 
 
 
+def the_sigurd_files(log):
+    if log == "First Log":
+        print("""
+              
+              Date: August 22, 1968
+              Hello. i am writing this log to keep myself sane. I couldnt find a way to do the most basic thing on this old janky 
+              butt computer so I had Desmond add it in, the log feature. til now ive just been adding my own 
+              notes to the bestiary whatever i know. My brother said i should keep a journal
+              so im doing what i can! I am writing in a proffessional manner, as these logs could become a historical record, as they will 
+              projbably be here for years, just as long as there isnt a clean wipe. that is what desmond saidfd
 
+
+              If you are reading it in the future, you are probably from a nother crew. The turnover rate here is 
+              enormous, maybe cause this job sucks and every one turns over dead! Maybe I can 
+              give some help when I have some expirience. End log.
+
+              Oh, our names are: Sigurd (me), Richard, Desmond, Jess.
+              
+                                                                                                                          """)
+    elif log == "Mummy":
+        print("""
+              
+             this suit is squeezing me like I'm a gosh damn mummy! im a grown man, give it some space 
+             between the legs! it's killing me i'm dying! i FINALLY got a job, and its just like dad always said. Everyone 
+             here smells. especially Rich. I'm going to throw him in the lake. I don't care 
+             what it's made of. i love being on screen duty. oh
+             i forgot the date it's August 24, 1968. this keyboard has dsadjilfasqt..f/g;
+
+
+
+             today we found a couple frying pans and a big nail. Worth almost nothing. what is the company even using it for
+              
+                                                    """)
+    elif log == "Swig of things":
+        print("""
+              
+              we got in the "swing of things" the past few days. thats what Rich keeps saying, he 
+              smells like a rancid tuna can. worst summer camp I've ever been o n. oh.. Date is August 27, 1968.
+              we make sure someone always has a shovel for bashing anything that moves, and we 
+              always put someone on "screen duty" so they can open these big security doors with letters and 
+              numbers. ask Desmond the wizard how that works, I think he just types in the code thats on the door. Thats it
+
+
+              we sold some goods to the company today. i got m y nerves chilled listening to the WACKO soundfs 
+              behind the counter. No one else gave any. ??
+
+              My flashlight didn't even go back there, the beam just went dark.
+                                                                                                                          """)
+    elif log == "Golden planet":
+        print("""
+              
+              I talked ot a voice on the walkie talkie, it was like a part of the pestle and morter. he told me the 
+              Golden planet actually existed, its not a legend. and he told me it didn't just hit a meteor. He said 
+              the planet was swallowed up by the "beast", and they were in its body being diggested. i asked what the beast is, 
+              and he said he didnt know!. he said it ate the planet and they forgot everything.
+
+              i couldnt get him to stop talking. but i said he was on the other side of a big wall and i could get him out. i said 
+              he was inside the building. and thats when he started freaking out/. i couldn't make out a word, I think 
+              he said something about 
+              "spitting out the rinds" So i just turned it off. what a wack
+
+
+
+              Jess says the golden planet is just a story. I said  I KNOW, I'm not an idiot. Well she said i should quit, and she quits 
+              if i do. so shes staying
+              """)
+    elif log == "Autopilot":
+        print("""
+              
+              date is August 31, 1968. i got camera duty again, i hate walking on this moon anyway. ahah jokes on them it, 
+              just started raining!!! Im just sitting. cant sleep on these tiny beds for ants
+
+
+              Ive been thinking a lot. i think this job is shady. If youre reading this you probbably got here the same as me. 
+              the pay is good, the contract only lasts a season. they ran you through their "assessmennt exam" on the phone with a weird voice. 
+              you signed the contract on the shuttle with the rest of your crew. But the whole time you didnt talk to anyone. 
+              The shuttle was autopiloted, I think the voice on the phone was fake.  I;ve had the wrost dreams, I think   I just want to go back home. 
+              but im not gonna crawl home, crying and scratching on dad's front door. thats not his son. thats not Sigurd!
+                                                                                                                          """)
+    elif log == "Behind The Wall":
+        print("""
+              
+              i got woken up early this morning because we were going to the company 
+              building to sell our useless garbage. The rate was 120% which Desmond says 
+              is rare and he didnt want to miss it, hes been watching it like the stupid 
+              stocks.
+
+              it still sucks here, Rich still smells like a piece of hsit .i can barely 
+              sleep. i heard the wrorst sound behind the wall of the company building, it 
+              sounded like the pestle and bowl my mom crushed up her seeds and spices in. 
+              i still hear it. no one else heard it. Jess thinks i;m "home sick," no im 
+              sick of this cheap suit
+
+              date: Septermber 4, 1968
+                                                                                                                          """)
+    elif log == "Goodbye":
+        print("""
+              
+              they had me on screen duty, and then they all came waddling back,, but Rich 
+              wasn't there, and they said they couldnt find him. Desmond said it turned 
+              his neck but he didnt see it. I wanted to find Rich even if he was dead, but 
+              they are cowards! their faces are blank like idiots, theres nothing moving 
+              in their stupid skulls, all they wanted to do is leave. they were going to 
+              leave me too if i went out. we all hated Rich but we didnt want this. this 
+              isnt worth it, its just not worth it. we got a pair of scissors, a box full 
+              of stamps and a bundle of cords to sell for nothing. its not wort h it, what 
+              does the company even want it for?
+
+
+              the date we last saw Rich is September 7, 1968
+                                                                                                                          """)
+    elif log == "Screams":
+        print("""
+              
+              date: September 13, 1968
+
+              for some reason i was the one who had to call the company number to report 
+              the acciddent. they were too scared to do it. It was the same fake voice i 
+              remember from the interview on the phone at home and the stupid training 
+              videos. but it heard what i said i think, cause it said they would contact 
+              the family and find a replacement and something e lse. It talked so fast.
+
+
+
+              I learned you can hear the screams all the time in the walkie talkie when 
+              you;re  at the wall of the Company building. they didnt believe me, well now 
+              they do. It sounds just like when i heard it a couple weeks ago. They want 
+              to quit. I said I'm not a coward. I just got this job
+                                                                                                                          """)
+    elif log == "Idea":
+        print("""
+              
+              date: September 18, 1968
+              the past weekend it feels like Desmond and Jess woke up. we;re supposed to 
+              get our fourth member of the crew in a few days. We arent taking any risks 
+              anymore, we dont get as much but it feels safer, and ive gotten better 
+              sleep. but its still ass. i can still smell Rich i swear to gosh he smelled 
+              that bad
+
+
+
+              i was talking about how the voice on the phone sounded fake. Then Desmond 
+              got this weird idea. he's the wizard and all so he thinks theres a way to 
+              use the phone call i made to the company number to find ourt where the voice 
+              comes from. i dont know why hed want to do that but he seems serious. He;s 
+              been using the terminal a lot.
+                                                                                                                          """)
+    elif log == "Nonsense":
+        print(""" 
+             
+              September 27, 1968
+              desmond wants me to writ e down what we figured out and keep my "nonsense to 
+              a minimum". So im going to put SO MUCH of my non sense. screw him. The new 
+              crew member is named Lucas and he is so confused and scared a ll the time, 
+              what a baby, at least he doesnt smell like a monster. its been so sunny even 
+              though its september, and these suits dont take it well
+
+              ok so desmond "traced the call" and found out theres a group of people 
+              somewhere else that pretends to call us from the company building. they are 
+              across the whole solar system !! why would they be so far away.
+
+
+
+              Desmond says he doesnt know, but i think. What if there really is a big 
+              monster in the company building like the voice told me on the wlakie talkie? 
+              They trapped it, and we feed it to keep it tame.
+ 
+ 
+                                                                                                         """)
+    elif log == "Hiding":
+        print("""
+              
+              September 30, 1968
+
+              i keep having bad dreams about the Company building where the Company breaks 
+              out of that giant concrete wall. But i dont know if it looks like anything, 
+              i just think its really fast, and its so big it covers the sky. We cant 
+              figure out a way to know if the voices on the phone are real, desmond says 
+              its too far away. i asked him if he could ttake control of the autopilot and 
+              he said im crazy and that could kill us. yes i am crazy desmond
+
+
+              he says we would have to get our own private flight to go to the cordinates, 
+              and who knows what would actually be there. So, what if its nothing?
+
+              i started wondering how i cant remember how we really got here, no I just 
+              remember little things like the shuttle flight to the building where we 
+              signed our contracts. But i dont remember getting on the shuttle, i dont 
+              even remember saying bye to dad. sometmies i feel this deep pit in my 
+              stomache and i have to think just to remember my name. in my dreams it feels 
+              like the company isnt trapped in there at all, its just hiding. I dont know 
+              if were going home
+                                                                                                                          """)
+    elif log == "Real Job":
+        print("""
+              
+              date : October 1st, 1968
+              were out of snacks and lemonade packets again. desmond thinks stun grenades 
+              are "more benefficial and economic" well if he puts off ordering my stuff 
+              for another day, im going to take a crap on the control lever and ask him 
+              what he thinks about his stun grenades then. desmond dont read this
+
+
+              i know im not the wizard but I guess im the computer guy again today. every 
+              time i go outside on vow they say i get pale like im dead, so they put me on 
+              screen duty. they think i got soft or something. whatever, Mr. Doofus Lucas 
+              is the scared one. good luck keeping him from losing his freaking mind. I 
+              could stroll out at night like its my back yard!! Its just that i saw Rich 
+              on a hill. he was over on the orther side of the river. but that was three 
+              days ago. Im not scared, its just getting cold outside. i think they jus 
+              twant me to have screen duty every day now, and they all got an excuse
+
+
+
+              i miss dad. i hope he isnt staying on titan. people are saying its not going 
+              to look the same in two years. jess told us they a re about to go to war and 
+              everyone is just waiting for it. every time we go to sell, the company 
+              building is shaking like theres a loud furnace inside. we can barely sleep 
+              to meet the quota, and it gets worse every time. God, i feel like im being 
+              squeezed through a needle. i wish we could go back. it was better working 
+              for Dad even when i got nothing, just daily alowance. i liked when he would 
+              drive us out of town to see the waterfall and we walked up those old wooden 
+              stairs. I just wanted a real job
+                                                                                                                          """)
+    elif log == "Desmond":
+         print("""
+              
+              Desmond. October 4, 1968. Using the log entry system I designed for Sigurd, 
+              but I'm making this one private to keep it safe from discovery, as it would 
+              damage the team morale. We might not meet our quota tonight.
+
+
+              I believe it's all a guise. We're supposed to think it's all just a 
+              transaction, but our real job is keeping an unstoppable terror fed. How long 
+              until its fullness ends and its hunger is insatiable? God knows, maybe it 
+              has to do with all these desolate moons. Whoever reads this, I am sorry to 
+              burden you with this. Please have a good night, and work hard. As what else 
+              is there for us to do?
+
+
+                                                                                                                          """)
+    elif log == "Team Synergy":
+        print("""
+              
+              October 10th 1968
+
+
+             I havent felt like writing. no time. but last night
+             I swear i heard dad talking to me from the vent,
+             the one under the charger. i dont feel crazy. Man,
+             thats what they all say, yea yea i know! Well, im
+             writing this log to keep myself sane, right? so ill
+             write about it. he was asking where he was,
+             breathing really deep like he couldnt breath, like
+             he was getting pulled into the engine. he sounded
+             scared. he said he was thirsty
+
+
+             i never heard dad like that. maybe i just dont get
+             enugh sleep. jeesh, how am i gona do it now. maybe
+             i should just open the thing up and look.
+
+
+             maybe its cause Im feeling bad, cause we sold the
+             baby bird we stole from that giant wingless one
+             that's always stink-eyeing us on Vow. Man it could
+             run thouggh, we had to leave on the spot, and Mr.
+             Doofus Lucas has been chattering his teeth ever
+             since. im not doing that again.
+             They made ME< put the baby bird on the desk. I
+             think I shouldn't have done it. i know why they
+             made me do it now.... theyre even more guilty than
+             i am. cowards. So i went and told it to desmond's
+             face. Do your own dirty work.
+
+             He went all dumb and and said guilty what? For
+             selling the baby bird egg!Then, i cant belive it,
+             he said it's no different than the eggs you eat for
+             breakfast. i said it BROKE OUT AND LOOKED AT US,
+             and i wouldnt eat that! it was ALIVE. And then,
+             what he said. "could it carry scrap? could it get
+             us to the quota? could it raise our efficiency and
+             throughputt and enhance our team synergy, could it
+             bla bla blablablablablblblabalblbalabalbla
+             blasbdalsbdabdalbalbdalbdlaslbdaldbalbsdlbadlbalbsd
+             lbadlbalbsdlbadlbalsbdabldbasbalsbalbblBSLABALBBALB
+             ALBALBASLBASBABBLABSLDBAKDSJAFBSfkjhbaglsdsjbkabdA
+             BLA BLA BLA BL AB LABL A BLA BLA BB LLABDLAB BLAL
+             Abldblbdbd" His fat stupid lips kept flabbibng out
+             like the voice in the company phone. Then he just
+             heaved a big breath like he was satisfied and went
+             back to work, like he won the argument. ill kill
+             him!! desmond why don't i put you on the desk, like
+             I KNOW you all did to Rich. that'll show you team
+             synergy.
+
+             i poured some grape juice in thtrough the vent. im
+             so stupid, i dont know why. it wasnt much. i guess
+             i just thought it wont hurt anything
+
+
+                                                                                                                          """)
+    elif log == "Letter of Resignation":
+        print("""
+              
+              Date: October 13, 1968
+              This is Desmond. Sigurd is unable to write. But I feel the need to keep a 
+              record, and none of us are sleeping tonight. After the incident, he's 
+              practically catatonic. He says he heard his father's voice in the air intake 
+              vent under the charger several days ago; I wish he'd told us before the 
+              incident, but I'm liable to believe he's being honest at least to himself. 
+              In this state he'd be a danger to himself and others, so we've been reduced 
+              to a three-man crew--a hard blow I'm afraid we can't afford.
+
+
+              This is how Jess and Lucas recounted it. There was a scraping sound, of 
+              which they soon located the vent as the source. They took this as a sign of 
+              the ship needing maintenance and perhaps an oil change. Lucas went to grab 
+              the tools just to check. However before he returned, the vent burst with a 
+              chunky, red fluid, with what were almost surely bits of bone and hair, which 
+              spread across the floor, like the contents of a clogged toilet. Fully 
+              emptying the vent, cleaning out the ship, and eradicating the stench was a 
+              challenge I wouldn't wish on anyone, especially with Sigurd trying to stop 
+              us. Now the smell of bleach burning our nostrils is a relief.
+
+
+              Why? Why did it happen? I cannot reasonably entertain Sigurd's "explanation" 
+              that somehow his father was inside the ship. He has always been quite 
+              imaginative, not to mention his current state. I believe the crew before us-
+              -or the crew before that--is simply responsible for attempting to avoid a 
+              fine, and the method was to hide their mistake. The victim's remains have 
+              been dumped out, and we will never identify them.
+
+
+              It doesn't matter. As I stated, this is unsustainable. I have followed every 
+              step of the handbook. I have tried to make things work. I have maximized our 
+              efficiency. I have kept our morale in check. Now, even I am wringing my 
+              hands. It's like this job is just designed to break me! I've done everything 
+              right, I've done everything I can, and still, we would have to pull a 
+              miracle just to get back on track. The only course of action left is to do 
+              what I cannot. So maybe I will.
+
+
+
+              I will hand in my letter of resignation personally. It's time to see who 
+              we've been working for. No, Sigurd, this is not our real job. Our work has 
+              just begun. And there is no way out but further in. 
+                                  """)
+    else:
+                    print("[This action was not compatible with this object.]")
+   
 
 
 

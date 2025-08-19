@@ -1,12 +1,13 @@
-# v0.6.4 // NOT FINISHED YET 
-#V V V V |UPDATE NOTES| V V V V V V 
+# v1.6.5 // FINISHED 
+#The Lethal Company Terminal is finished! They are some minor bugs and details to fix, but you can use pretty much every function of the terminal.
 #! ! ! The STORE function is NOT WORKING (partially)! ! ! !
-#-Added other and storage functions
-#-Added sigurd function (not working yet)
+#-Added sigurd logs
+#-Added sigurd function 
 #Happy Birthday Lethal Company 1st year annivesrary (23/10/2023 - 23/10/2024)
 
 import math 
 import datetime 
+from function import the_sigurd_files
 from function import the_moon_info
 from function import the_bestiary_info
 import re
@@ -603,36 +604,6 @@ def other(credits):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 
 def storage():
@@ -706,9 +677,120 @@ def storage():
     
 
 def sigurd():
-    print("Sigurd is not available yet, please wait for the next update.")
-    print("This is a placeholder function for future updates.")
-    print("Thank you for your patience!")
+   print("                                   ")
+   print("                   '" ,credits , " ")
+   sig_choice = input(""" 
+                      
+                       SIGURD'S LOG ENTRIES
+                         
+                       To read a log, use keyword \"VIEW\" before its name.
+                       ------------------------------------------------------------------------
+
+                       First Log - Aug 22
+                       Mummy - Aug 24
+                       Swig of things - Aug 27
+                       Golden Planet Aug ??
+                       Autopilot - Aug 31
+                       Behind The Wall - Sep 4 
+                       Goodbye - Sep 7
+                       Screamns - Sep 13
+                       Idea - Sep 18
+                       Nonsense - Sep 27
+                       Hiding - Sep 30
+                       Real Job - Oct 1 
+                       Desmond - Oct 9
+                       Team Synergy - Oct 10
+                       Letter of Resignation - Oct 13
+                       
+                      
+
+                                                                                                 """)
+   sigurd_aliases = {
+        "First Log": ["First Log", "first log"],
+        "Mummy": ["Mummy", "mummy"],
+        "Swig of things": ["Swig of things", "swig of things"],
+        "Golden Planet": ["Golden Planet", "golden planet"],
+        "Autopilot": ["Autopilot", "autopilot"],
+        "Behind The Wall": ["Behind The Wall", "behind the wall"],
+        "Goodbye": ["Goodbye", "goodbye"],
+        "Screamns": ["Screamns", "screamns"],
+        "Idea": ["Idea", "idea"],
+        "Nonsense": ["Nonsense", "nonsense"],
+        "Hiding": ["Hiding", "hiding"],
+        "Real Job": ["Real Job", "real job"],
+        "Desmond": ["Desmond", "desmond"],
+        "Team Synergy": ["Team Synergy", "team synergy"],
+        "Letter of Resignation": ["Letter of Resignation", "letter of resignation"]
+    }
+   
+
+
+   def resolve_sigurd(user_input):
+        user_input = user_input.lower()
+        for log, aliases in sigurd_aliases.items():
+            for alias in aliases:
+                if alias == user_input:
+                    return log
+        for log, aliases in sigurd_aliases.items():
+            for alias in aliases:
+                if user_input in alias:
+                    return log
+        return None
+   
+   #Fix syntax on messages !!!
+   def print_sigurd_info(log):
+        the_sigurd_files(log)
+   
+   import re
+   match = re.match(r'\s*(VIEW)\s+(.+)', sig_choice, re.IGNORECASE)
+   
+   if not match:
+          print("[This action was not compatible with this object.]")
+          return sigurd()
+   command = match.group(1).strip().upper()
+   log_input = match.group(2).strip()
+   log = resolve_sigurd(log_input)
+   
+   if not log:
+        print("[This action was not compatible with this object.]")
+        return sigurd()
+   if command == "VIEW":
+        print_sigurd_info(log)
+   else:
+        print("[This action was not compatible with this object.]")
+   return credits
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
